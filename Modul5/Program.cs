@@ -22,7 +22,7 @@ class Program
             Console.WriteLine("Введите возраст цифрами");
             age = Console.ReadLine();
 
-        } while (CheckNum(age, out intage) == false || intage == 0);
+        } while (CheckNum(age, out intage) == false || intage < 1);
         Info.Age = intage;
 
         Console.WriteLine("У вас есть питомцы? (да/нет)");
@@ -36,7 +36,7 @@ class Program
                 Console.WriteLine("Сколько питомцев вы держите?\n(введите число)");
                 PetNum = Console.ReadLine();
 
-            } while (CheckNum(PetNum, out IntPetNum) == false || IntPetNum == 0);
+            } while (CheckNum(PetNum, out IntPetNum) == false || IntPetNum < 1);
             Info.Pets = new string[IntPetNum];
             Console.WriteLine("Введите клички ваших питомцев:");
             Info.Pets = CreateArray(IntPetNum);
@@ -54,7 +54,7 @@ class Program
             Console.WriteLine("Сколько у вас любимых цветов?\n(введите число)");
             ColNum = Console.ReadLine();
 
-        } while (CheckNum(ColNum, out IntColNum) == false || IntColNum == 0);
+        } while (CheckNum(ColNum, out IntColNum) == false || IntColNum < 1);
         Console.WriteLine("Введите ваши любимые цвета:");
         Info.FavColors = CreateArray(IntColNum);
         return Info;
